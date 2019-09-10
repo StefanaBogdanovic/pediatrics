@@ -6,7 +6,11 @@
 
 (defroutes public-routes
            (GET "/" [] (controller/index))
-           (route/resources "/"))
+           (route/resources "/")
+
+           (GET "/homepage" [] (controller/home))
+           (route/resources "/")
+           )
 
 (defroutes app-routes
            public-routes

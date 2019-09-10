@@ -12,3 +12,6 @@
 (defn index []
       (render-template "index" {}))
 
+(defn home []
+  (render-template "homepage" {}))
+
