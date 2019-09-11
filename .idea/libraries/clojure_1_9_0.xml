@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="clojure-1.9.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../clojure-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../spec.alpha-0.1.143.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/compojure/compojure/1.5.1/compojure-1.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/ubercode/clostache/clostache/1.4.0/clostache-1.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/compojure/compojure/1.5.1/compojure-1.5.1.jar!/" recursive="false" />
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/de/ubercode/clostache/clostache/1.4.0/clostache-1.4.0.jar!/" recursive="false" />
+  </library>
+</component>

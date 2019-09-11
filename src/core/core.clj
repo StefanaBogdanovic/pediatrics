@@ -13,6 +13,11 @@
 
            (GET "/getAllDoctors" [] (controller/getAllDoctors))
            (route/resources "/")
+
+           (GET "/getAllDoctorTypes" [] (controller/getAllDoctorTypes))
+           (route/resources "/")
+
+
            )
 
 (defroutes app-routes
