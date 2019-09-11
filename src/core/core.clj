@@ -10,6 +10,9 @@
 
            (GET "/homepage" [] (controller/home))
            (route/resources "/")
+
+           (GET "/getAllDoctors" [] (controller/getAllDoctors))
+           (route/resources "/")
            )
 
 (defroutes app-routes

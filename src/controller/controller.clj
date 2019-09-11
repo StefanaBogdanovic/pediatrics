@@ -1,6 +1,8 @@
 (ns controller.controller
   (:require
-    [clostache.parser :as clostache]))
+    [clostache.parser :as clostache]
+    [pediatrics_domain.doctor :as doctor-domain]
+    ))
 
 (defn read-template [template-name]
       (slurp (clojure.java.io/resource
@@ -14,4 +16,7 @@
 
 (defn home []
   (render-template "homepage" {}))
+
+(defn getAllDoctors []
+  (render-template "getAllDoctors" {:doctor (doctor-domain/getAllDoctors)}))
 
