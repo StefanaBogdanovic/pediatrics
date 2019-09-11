@@ -3,6 +3,7 @@
     [clostache.parser :as clostache]
     [pediatrics_domain.doctor :as doctor-domain]
     [pediatrics_domain.doctor_type :as doctorType-domain]
+    [pediatrics_domain.patient :as patient-domain]
     ))
 
 (defn read-template [template-name]
@@ -23,4 +24,7 @@
 
 (defn getAllDoctorTypes []
   (render-template "getAllDoctorTypes" {:doctor_type (doctorType-domain/getAllDoctorTypes)}))
+
+(defn getAllPatients []
+  (render-template "getAllPatients" {:patient (patient-domain/getAllPatients)}))
 

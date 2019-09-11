@@ -17,6 +17,8 @@
            (GET "/getAllDoctorTypes" [] (controller/getAllDoctorTypes))
            (route/resources "/")
 
+           (GET "/getAllPatients" [] (controller/getAllPatients))
+           (route/resources "/")
 
            )
 
