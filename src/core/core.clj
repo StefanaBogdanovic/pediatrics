@@ -23,6 +23,9 @@
            (GET "/getAllExaminations" [] (controller/getAllExaminations))
            (route/resources "/")
 
+           (GET "/getAllRefers" [] (controller/getAllRefers))
+           (route/resources "/")
+
            )
 
 (defroutes app-routes
