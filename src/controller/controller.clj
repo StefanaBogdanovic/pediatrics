@@ -4,6 +4,7 @@
     [pediatrics_domain.doctor :as doctor-domain]
     [pediatrics_domain.doctor_type :as doctorType-domain]
     [pediatrics_domain.patient :as patient-domain]
+    [pediatrics_domain.examination :as examination-domain]
     ))
 
 (defn read-template [template-name]
@@ -27,4 +28,7 @@
 
 (defn getAllPatients []
   (render-template "getAllPatients" {:patient (patient-domain/getAllPatients)}))
+
+(defn getAllExaminations []
+  (render-template "getAllExaminations" {:examination (examination-domain/getAllExaminations )}))
 

@@ -20,6 +20,9 @@
            (GET "/getAllPatients" [] (controller/getAllPatients))
            (route/resources "/")
 
+           (GET "/getAllExaminations" [] (controller/getAllExaminations))
+           (route/resources "/")
+
            )
 
 (defroutes app-routes
