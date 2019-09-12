@@ -17,6 +17,11 @@
   (jdbc/query db-connection
               ["SELECT * FROM patient p"]))
 
+(defn removePatient [id]
+  (jdbc/execute! db-connection
+                 ["DELETE FROM patient WHERE patient_id = ?" id]))
+
+
 
 
 

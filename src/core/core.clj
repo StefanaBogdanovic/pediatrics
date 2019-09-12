@@ -5,7 +5,8 @@
             [controller.controller :as controller]
             [pediatrics_domain.doctor :as doctor-domain]
             [ring.util.response :as resp]
-            [pediatrics_domain.doctor_type :as doctorType-domain])
+            [pediatrics_domain.doctor_type :as doctorType-domain]
+            [pediatrics_domain.patient :as patient-domain])
   )
 
 (defroutes public-routes
@@ -37,6 +38,10 @@
            (GET "/pediatrics_domain/doctor_types/:id/removeDoctorType" [id]
                 (do (doctorType-domain/removeDoctorType id)
                     (resp/redirect "/getAllDoctorTypes")))
+
+           (GET "/pediatrics_domain/patients/:id/removePatient" [id]
+                (do (patient-domain/removePatient id)
+                    (resp/redirect "/getAllPatients")))
 
            )
 
