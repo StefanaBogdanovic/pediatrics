@@ -17,3 +17,6 @@
   (jdbc/query db-connection
               ["SELECT * FROM doctor_type dt"]))
 
+(defn removeDoctorType [id]
+  (jdbc/execute! db-connection
+                 ["DELETE FROM doctor_type WHERE doctor_type_id = ?" id]))
