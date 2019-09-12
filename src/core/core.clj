@@ -6,7 +6,8 @@
             [pediatrics_domain.doctor :as doctor-domain]
             [ring.util.response :as resp]
             [pediatrics_domain.doctor_type :as doctorType-domain]
-            [pediatrics_domain.patient :as patient-domain])
+            [pediatrics_domain.patient :as patient-domain]
+            [pediatrics_domain.examination :as examination-domain])
   )
 
 (defroutes public-routes
@@ -42,6 +43,10 @@
            (GET "/pediatrics_domain/patients/:id/removePatient" [id]
                 (do (patient-domain/removePatient id)
                     (resp/redirect "/getAllPatients")))
+
+           (GET "/pediatrics_domain/examinations/:id/removeExamination" [id]
+                (do (examination-domain/removeExamination id)
+                    (resp/redirect "/getAllExaminations")))
 
            )
 
