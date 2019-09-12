@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="clojure-1.9.0" level="project" />
+    <orderEntry type="library" name="html5-schema" level="project" />
   </component>
 </module>

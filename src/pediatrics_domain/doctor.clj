@@ -16,3 +16,8 @@
               ["SELECT d.*, dt.name as dt_name FROM doctor d JOIN doctor_type dt ON d.doctor_type_id = dt.doctor_type_id"]))
 
 
+(defn removeDoctor [id]
+  (jdbc/execute! db-connection
+                 ["DELETE FROM doctor WHERE doctor_id = ?" id]))
+
+

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="html5-schema">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/intellij-xml.jar!/resources/html5-schema" />
+    </SOURCES>
+  </library>
+</component>

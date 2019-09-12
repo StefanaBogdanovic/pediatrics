@@ -1,8 +1,12 @@
 (ns core.core
    (:use compojure.core)
-    (:require [compojure.handler :as handler]
-              [compojure.route :as route]
-               [controller.controller :as controller]))
+  (:require [compojure.handler :as handler]
+            [compojure.route :as route]
+            [controller.controller :as controller]
+            [pediatrics_domain.doctor :as doctor-domain]
+            [ring.util.response :as resp]
+         )
+  )
 
 (defroutes public-routes
            (GET "/" [] (controller/index))
@@ -25,6 +29,10 @@
 
            (GET "/getAllRefers" [] (controller/getAllRefers))
            (route/resources "/")
+
+           (GET "/pediatrics_domain/doctors/:id/removeDoctor" [id]
+                (do (doctor-domain/removeDoctor id)
+                    (resp/redirect "/getAllDoctors")))
 
            )
 
