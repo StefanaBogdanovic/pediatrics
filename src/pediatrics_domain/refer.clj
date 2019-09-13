@@ -20,6 +20,13 @@
 (defn removeRefer [id]
   (jdbc/execute! db-connection
                  ["DELETE FROM refer WHERE refer_id = ?" id]))
+(defn get [id]
+  (first (jdbc/query db-connection
+                     ["SELECT * FROM refer WHERE refer_id = ?" id])))
+(defn updateRefer [id params]
+  (jdbc/update! db-connection :refer params (sql/where {:refer_id id})))
+
+
 
 
 
