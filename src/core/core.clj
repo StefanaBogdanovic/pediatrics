@@ -75,6 +75,13 @@
                  (do (examination-domain/updateExamination (:examination_id params) params)
                      (resp/redirect "/getAllExaminations")))
 
+           (GET "/pediatrics_domain/patients/:id/updatePatient" [id]
+                (controller/updatingPatient id))
+
+           (POST "/pediatrics_domain/patients/:patient_id/updatePatient" [& params]
+                 (do (patient-domain/updatePatient (:patient_id params) params)
+                     (resp/redirect "/getAllPatients")))
+
 
 
            )

@@ -22,6 +22,13 @@
                  ["DELETE FROM patient WHERE patient_id = ?" id]))
 
 
+(defn get [id]
+  (first (jdbc/query db-connection
+                     ["SELECT * FROM patient WHERE patient_id = ?" id])))
+
+(defn updatePatient [id params]
+  (jdbc/update! db-connection :patient params (sql/where {:patient_id id})))
+
 
 
 

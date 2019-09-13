@@ -45,5 +45,9 @@
 (defn updatingExamination [examination_id]
   (render-template "updateExamination" {:examination (examination-domain/getExaminationByID examination_id)}))
 
+(defn updatingPatient [id]
+  (render-template "updatePatient" {:patient (patient-domain/get id)}))
+
+
 
 
