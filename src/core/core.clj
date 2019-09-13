@@ -53,6 +53,14 @@
                 (do (refer-domain/removeRefer id)
                     (resp/redirect "/getAllRefers")))
 
+           (GET "/pediatrics_domain/doctors/:id/updateDoctor" [id]
+                (controller/updatingDoctor id))
+
+           (POST "/pediatrics_domain/doctors/:doctor_id/updateDoctor" [& params]
+                 (do (doctor-domain/updateDoctor (:doctor_id params) params)
+                     (resp/redirect "/getAllDoctors")))
+
+
            )
 
 (defroutes app-routes

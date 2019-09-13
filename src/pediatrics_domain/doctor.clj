@@ -19,5 +19,12 @@
 (defn removeDoctor [id]
   (jdbc/execute! db-connection
                  ["DELETE FROM doctor WHERE doctor_id = ?" id]))
+(defn getDoctorByID [id]
+  (first (jdbc/query db-connection
+                     ["SELECT d.* FROM doctor d WHERE d.doctor_id = ?" id])))
+(defn updateDoctor [id params]
+  (jdbc/update! db-connection :doctor params (sql/where {:doctor_id id})))
+
+
 
 

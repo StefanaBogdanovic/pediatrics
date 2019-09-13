@@ -36,3 +36,6 @@
 (defn getAllRefers []
   (render-template "getAllRefers" {:refer (refer-domain/getAllRefers)}))
 
+(defn updatingDoctor [doctor_id]
+  (render-template "updateDoctor" {:doctor (doctor-domain/getDoctorByID doctor_id)}))
+
