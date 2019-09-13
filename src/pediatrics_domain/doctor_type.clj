@@ -20,3 +20,10 @@
 (defn removeDoctorType [id]
   (jdbc/execute! db-connection
                  ["DELETE FROM doctor_type WHERE doctor_type_id = ?" id]))
+
+(defn getDoctorTypeByID [id]
+  (first (jdbc/query db-connection
+                     ["SELECT * FROM doctor_type WHERE doctor_type_id = ?" id])))
+
+(defn updateDoctorType [id params]
+  (jdbc/update! db-connection :doctor_type params (sql/where {:doctor_type_id id})))

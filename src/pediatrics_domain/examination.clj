@@ -21,3 +21,11 @@
 (defn removeExamination [id]
   (jdbc/execute! db-connection
                  ["DELETE FROM examination WHERE examination_id = ?" id]))
+(defn getExaminationByID [id]
+  (first (jdbc/query db-connection
+                     ["SELECT * FROM examination WHERE examination_id = ?" id])))
+
+(defn updateExamination [id params]
+  (jdbc/update! db-connection :examination params (sql/where {:examination_id id})))
+
+

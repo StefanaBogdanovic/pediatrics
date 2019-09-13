@@ -39,3 +39,11 @@
 (defn updatingDoctor [doctor_id]
   (render-template "updateDoctor" {:doctor (doctor-domain/getDoctorByID doctor_id)}))
 
+(defn updatingDoctorType [doctor_type_id]
+  (render-template "updateDoctorType" {:doctor_type (doctorType-domain/getDoctorTypeByID doctor_type_id)}))
+
+(defn updatingExamination [examination_id]
+  (render-template "updateExamination" {:examination (examination-domain/getExaminationByID examination_id)}))
+
+
+

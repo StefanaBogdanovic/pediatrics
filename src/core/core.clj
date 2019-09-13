@@ -8,7 +8,8 @@
             [pediatrics_domain.doctor_type :as doctorType-domain]
             [pediatrics_domain.patient :as patient-domain]
             [pediatrics_domain.examination :as examination-domain]
-            [pediatrics_domain.refer :as refer-domain])
+            [pediatrics_domain.refer :as refer-domain]
+            [clojure.spec.alpha :as s])
   )
 
 (defroutes public-routes
@@ -59,6 +60,21 @@
            (POST "/pediatrics_domain/doctors/:doctor_id/updateDoctor" [& params]
                  (do (doctor-domain/updateDoctor (:doctor_id params) params)
                      (resp/redirect "/getAllDoctors")))
+
+           (GET "/pediatrics_domain/doctor_types/:id/updateDoctorType" [id]
+                (controller/updatingDoctorType id))
+
+           (POST "/pediatrics_domain/doctor_types/:doctor_type_id/updateDoctorType" [& params]
+                 (do (doctorType-domain/updateDoctorType (:doctor_type_id params) params)
+                     (resp/redirect "/getAllDoctorTypes")))
+
+           (GET "/pediatrics_domain/examinations/:id/updateExamination" [id]
+                (controller/updatingExamination id))
+
+           (POST "/pediatrics_domain/examinations/:examination_id/updateExamination" [& params]
+                 (do (examination-domain/updateExamination (:examination_id params) params)
+                     (resp/redirect "/getAllExaminations")))
+
 
 
            )
