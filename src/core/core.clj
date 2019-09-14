@@ -89,6 +89,12 @@
                  (do (refer-domain/updateRefer (:refer_id params) params)
                      (resp/redirect "/getAllRefers")))
 
+           (GET "/pediatrics_domain/doctors/insertDoctor" [] (controller/insertDoctor))
+
+           (POST "/pediatrics_domain/doctors/insertDoctor" [& params]
+                 (do (doctor-domain/insertDoctor params)
+                     (resp/redirect "/getAllDoctors")))
+
 
 
            )

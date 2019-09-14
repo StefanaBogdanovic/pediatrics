@@ -51,6 +51,9 @@
 (defn updatingRefer [refer_id]
   (render-template "updateRefer" {:refer (refer-domain/get refer_id)}))
 
+(defn insertDoctor []
+  (render-template "insertDoctor" {}))
+
 
 
 
