@@ -95,7 +95,11 @@
                  (do (doctor-domain/insertDoctor params)
                      (resp/redirect "/getAllDoctors")))
 
+           (GET "/pediatrics_domain/doctor_types/insertDoctorType" [] (controller/insertDoctorType))
 
+           (POST "/pediatrics_domain/doctor_types/insertDoctorType" [& params]
+                 (do (doctorType-domain/insertDoctorType params)
+                     (resp/redirect "/getAllDoctorTypes")))
 
            )
 
