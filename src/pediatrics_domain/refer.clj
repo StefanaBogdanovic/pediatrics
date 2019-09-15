@@ -26,6 +26,10 @@
 (defn updateRefer [id params]
   (jdbc/update! db-connection :refer params (sql/where {:refer_id id})))
 
+(defn insertRefer [params]
+  (jdbc/insert! db-connection :refer params))
+
+
 
 
 

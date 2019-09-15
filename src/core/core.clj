@@ -113,6 +113,12 @@
                  (do (examination-domain/insertExamination params)
                      (resp/redirect "/getAllExaminations")))
 
+           (GET "/pediatrics_domain/refers/insertRefer" [] (controller/insertRefer))
+
+           (POST "/pediatrics_domain/refers/insertRefer" [& params]
+                 (do (refer-domain/insertRefer params)
+                     (resp/redirect "/getAllRefers")))
+
 
 
            )

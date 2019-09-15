@@ -63,6 +63,10 @@
 (defn insertExamination []
   (render-template "insertExamination" {}))
 
+(defn insertRefer []
+  (render-template "insertRefer" {}))
+
+
 
 
 
