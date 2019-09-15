@@ -29,6 +29,10 @@
 (defn updatePatient [id params]
   (jdbc/update! db-connection :patient params (sql/where {:patient_id id})))
 
+(defn insertPatient
+  [params]
+  (jdbc/insert! db-connection :patient params))
+
 
 
 

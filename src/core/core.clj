@@ -101,6 +101,20 @@
                  (do (doctorType-domain/insertDoctorType params)
                      (resp/redirect "/getAllDoctorTypes")))
 
+           (GET "/pediatrics_domain/patients/insertPatient" [] (controller/insertPatient))
+
+           (POST "/pediatrics_domain/patients/insertPatient" [& params]
+                 (do (patient-domain/insertPatient params)
+                     (resp/redirect "/getAllPatients")))
+
+           (GET "/pediatrics_domain/examinations/insertExamination" [] (controller/insertExamination))
+
+           (POST "/pediatrics_domain/examinations/insertExamination" [& params]
+                 (do (examination-domain/insertExamination params)
+                     (resp/redirect "/getAllExaminations")))
+
+
+
            )
 
 (defroutes app-routes

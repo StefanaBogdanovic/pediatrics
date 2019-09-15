@@ -28,4 +28,8 @@
 (defn updateExamination [id params]
   (jdbc/update! db-connection :examination params (sql/where {:examination_id id})))
 
+(defn insertExamination
+  [params]
+  (jdbc/insert! db-connection :examination params))
+
 

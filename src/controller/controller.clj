@@ -57,6 +57,12 @@
 (defn insertDoctorType []
   (render-template "insertDoctorType" {}))
 
+(defn insertPatient []
+  (render-template "insertPatient" {}))
+
+(defn insertExamination []
+  (render-template "insertExamination" {}))
+
 
 
 
